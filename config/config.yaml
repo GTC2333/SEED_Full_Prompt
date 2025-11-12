@@ -1,0 +1,130 @@
+# SEED EEG Emotion Recognition Configuration
+
+# Data Configuration
+data:
+  input_dir: "input/SEED_EEG"
+  output_dir: "output"
+  results_dir: "results"
+  
+  # EEG Parameters
+  sampling_rate: 200  # Hz
+  n_channels: 62
+  n_subjects: 15
+  n_sessions: 15  # per subject
+  
+  # Frequency Bands (Hz)
+  frequency_bands:
+    delta: [1, 3]
+    theta: [4, 7]
+    alpha: [8, 13]
+    beta: [14, 30]
+    gamma: [31, 50]
+  
+  # Channel Selection Options
+  channel_montages:
+    full: 62
+    reduced_12: 12
+    reduced_9: 9
+    reduced_6: 6
+    reduced_4: 4
+
+# Experiment Configuration
+experiment:
+  # Cross-validation
+  train_sessions: 9
+  test_sessions: 6
+  n_repeats: 5  # For statistical significance
+  
+  # Labels
+  emotion_labels:
+    sad: 0
+    neutral: 1
+    happy: 2
+  
+  # Random seed for reproducibility
+  random_seed: 42
+
+# Model Configuration
+models:
+  # Classifiers to compare
+  classifiers:
+    - "svm"           # Linear SVM
+    - "logistic"      # L2-regularized Logistic Regression
+    - "knn"           # k-Nearest Neighbors
+    - "dbn"           # Deep Belief Network
+  
+  # SVM Parameters
+  svm:
+    kernel: "linear"
+    C: 1.0
+    random_state: 42
+  
+  # Logistic Regression Parameters
+  logistic:
+    penalty: "l2"
+    C: 1.0
+    max_iter: 1000
+    random_state: 42
+  
+  # k-NN Parameters
+  knn:
+    n_neighbors: 5
+    weights: "uniform"
+  
+  # Deep Belief Network Parameters
+  dbn:
+    hidden_layers: [100, 50]
+    learning_rate: 0.01
+    n_epochs: 100
+    batch_size: 32
+    random_state: 42
+
+# Feature Extraction Configuration
+features:
+  # Feature types to extract and compare
+  types:
+    - "psd"           # Power Spectral Density
+    - "de"            # Differential Entropy
+    - "dasm"          # Differential Asymmetry
+    - "rasm"          # Rational Asymmetry
+    - "dcau"          # Caudality Asymmetry
+    - "combined_asym" # DASM + RASM + DCAU
+  
+  # Window parameters for feature extraction
+  window_length: 1.0  # seconds
+  overlap: 0.5        # 50% overlap
+
+# Visualization Configuration
+visualization:
+  # Figure settings
+  figure_size: [12, 8]
+  dpi: 300
+  style: "seaborn-v0_8"
+  
+  # Colors for different conditions
+  colors:
+    sad: "#FF6B6B"      # Red
+    neutral: "#4ECDC4"   # Teal
+    happy: "#45B7D1"     # Blue
+  
+  # Save formats
+  save_formats: ["png", "pdf"]
+
+# Computational Configuration
+computation:
+  # Parallel processing
+  n_jobs: -1  # Use all available cores
+  
+  # Memory management
+  batch_processing: true
+  batch_size: 1000
+  
+  # GPU usage (if available)
+  use_gpu: true
+  device: "cuda"  # or "cpu"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/experiment.log"
