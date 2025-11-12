@@ -40,7 +40,7 @@ class SEEDDataLoader:
         self.sampling_rate = config['data']['sampling_rate']
         self.n_subjects = config['data']['n_subjects']
         
-        logger.info(f"Initialized SEED data loader for {self.n_subjects} subjects")
+        logger.debug(f"Initialized SEED data loader for {self.n_subjects} subjects")
     
     def _load_channel_order(self) -> List[str]:
         """
