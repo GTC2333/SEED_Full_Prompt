@@ -26,6 +26,7 @@ sys.path.append(str(Path(__file__).parent / 'src'))
 
 from experiments import SEEDExperiments
 from visualization import SEEDVisualizer
+from utils import setup_logging as setup_log_config
 
 def setup_logging(config: dict) -> None:
     """
