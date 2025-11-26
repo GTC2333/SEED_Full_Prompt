@@ -1,0 +1,37 @@
+{
+  "4_channels": {
+    "mean_accuracy": 0.3437037037037037,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.3437037037037037
+    ]
+  },
+  "6_channels": {
+    "mean_accuracy": 0.3533333333333333,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.3533333333333333
+    ]
+  },
+  "9_channels": {
+    "mean_accuracy": 0.3644444444444444,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.3644444444444444
+    ]
+  },
+  "12_channels": {
+    "mean_accuracy": 0.3577777777777778,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.3577777777777778
+    ]
+  },
+  "62_channels": {
+    "mean_accuracy": 0.8644444444444446,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.8644444444444446
+    ]
+  }
+}

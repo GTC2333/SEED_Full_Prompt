@@ -143,8 +143,8 @@ class SEEDDataLoader:
         # Normalize data
         data = (data - np.mean(data, axis=2, keepdims=True)) / np.std(data, axis=2, keepdims=True)
         
-        logger.info(f"Generated synthetic data for subject {subject_id}, session {session_id}: "
-                   f"shape {data.shape}, labels {np.bincount(labels)}")
+        # logger.info(f"Generated synthetic data for subject {subject_id}, session {session_id}: "
+        #            f"shape {data.shape}, labels {np.bincount(labels)}")
         
         return data, labels
     
@@ -173,13 +173,13 @@ class SEEDDataLoader:
                 labels = mat_data.get('labels', None)
                 
                 if data is not None and labels is not None:
-                    logger.info(f"Loaded real data for subject {subject_id}, session {session_id}")
+                    # logger.info(f"Loaded real data for subject {subject_id}, session {session_id}")
                     return data, labels
             except Exception as e:
                 logger.warning(f"Error loading .mat file {mat_file}: {e}")
         
         # Fall back to synthetic data
-        logger.info(f"Using synthetic data for subject {subject_id}, session {session_id}")
+        # logger.info(f"Using synthetic data for subject {subject_id}, session {session_id}")
         return self.generate_synthetic_data(subject_id, session_id)
     
     def load_all_data(self) -> Dict[str, Dict[str, Tuple[np.ndarray, np.ndarray]]]:
@@ -202,7 +202,7 @@ class SEEDDataLoader:
                 except Exception as e:
                     logger.error(f"Failed to load subject {subject_id}, session {session_id}: {e}")
         
-        logger.info(f"Loaded data for {len(all_data)} subjects")
+        # logger.info(f"Loaded data for {len(all_data)} subjects")
         return all_data
     
     def get_channel_subset(self, data: np.ndarray, n_channels: int) -> Tuple[np.ndarray, List[str]]:
@@ -244,7 +244,7 @@ class SEEDDataLoader:
         # Extract selected channels
         reduced_data = data[..., selected_indices, :]
         
-        logger.info(f"Selected {n_channels} channels: {selected_channels}")
+        # logger.info(f"Selected {n_channels} channels: {selected_channels}")
         return reduced_data, selected_channels
     
     def get_data_info(self) -> Dict:

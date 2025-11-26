@@ -122,7 +122,7 @@ class EEGFeatureExtractor:
             psd_features.append(trial_features)
         
         psd_features = np.array(psd_features)
-        logger.info(f"Computed PSD features: shape {psd_features.shape}")
+        # logger.info(f"Computed PSD features: shape {psd_features.shape}")
         
         return psd_features
     
@@ -167,7 +167,7 @@ class EEGFeatureExtractor:
             de_features.append(trial_features)
         
         de_features = np.array(de_features)
-        logger.info(f"Computed DE features: shape {de_features.shape}")
+        # logger.info(f"Computed DE features: shape {de_features.shape}")
         
         return de_features
     
@@ -233,7 +233,7 @@ class EEGFeatureExtractor:
             asymmetry_features.append(trial_features)
         
         asymmetry_features = np.array(asymmetry_features)
-        logger.info(f"Computed {feature_type.upper()} features: shape {asymmetry_features.shape}")
+        # logger.info(f"Computed {feature_type.upper()} features: shape {asymmetry_features.shape}")
         
         return asymmetry_features
     
@@ -317,5 +317,5 @@ class EEGFeatureExtractor:
         else:
             raise ValueError(f"Unsupported feature type for band-specific extraction: {feature_type}")
         
-        logger.info(f"Extracted {feature_type} features from {band_name} band: shape {features.shape}")
+        # logger.info(f"Extracted {feature_type} features from {band_name} band: shape {features.shape}")
         return features

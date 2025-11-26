@@ -1,0 +1,44 @@
+{
+  "psd": {
+    "mean_accuracy": 0.8496296296296296,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.8496296296296296
+    ]
+  },
+  "de": {
+    "mean_accuracy": 0.8644444444444446,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.8644444444444446
+    ]
+  },
+  "dasm": {
+    "mean_accuracy": 0.8303703703703704,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.8303703703703704
+    ]
+  },
+  "rasm": {
+    "mean_accuracy": 0.843703703703704,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.843703703703704
+    ]
+  },
+  "dcau": {
+    "mean_accuracy": 0.514074074074074,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.514074074074074
+    ]
+  },
+  "combined_asym": {
+    "mean_accuracy": 0.8325925925925927,
+    "std_accuracy": 0.0,
+    "all_accuracies": [
+      0.8325925925925927
+    ]
+  }
+}
